@@ -1,0 +1,13 @@
+.react-bs-table{
+    margin-bottom: 37px;
+}
+
+.react-bs-table .table-header{
+    height: 37px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(221,221,221);
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(221,221,221);
+}
