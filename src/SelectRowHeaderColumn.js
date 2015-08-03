@@ -2,7 +2,7 @@ import React from 'react';
 import classSet from 'classnames';
 import Const from './Const';
 
-class selectRowHeaderColumn extends React.Component{
+class SelectRowHeaderColumn extends React.Component{
 
   render(){
     var thStyle = {
@@ -18,6 +18,6 @@ class selectRowHeaderColumn extends React.Component{
     )
   }
 
-}
+};
 
 export default SelectRowHeaderColumn;
