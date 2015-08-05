@@ -1,7 +1,7 @@
 import React from 'react';
 import classSet from 'classnames';
 import Const from './Const';
-import Header from './Header';
+import TableHeaders from './TableHeaders';
 import TableBody from './TableBody';
 import PaginationList from './pagination/PaginationList';
 import ToolBar from './toolbar/ToolBar';
@@ -13,7 +13,7 @@ class BootstrapTable extends React.Component{
 
   constructor(props){
     super(props);
-    console.log(this.props.children);
+
     if(this.props.cellEdit){
       this.props.cellEdit.__onCompleteEdit__ = this.handleEditCell.bind(this);
       if(this.props.cellEdit.mode !== Const.CELL_EDIT_NODE)
@@ -46,12 +46,13 @@ class BootstrapTable extends React.Component{
          })
        }.bind(this));
      }else{
+
        this.store = new TableDataStore(this.props.data);
      }
 
      this.store.setProps(this.props.pagination,keyField);
      this.state = {
-       datat: this.getTableData()
+       data: this.getTableData()
      };
   }
 
@@ -151,13 +152,13 @@ class BootstrapTable extends React.Component{
       <div className="react-bs-container">
         {toolBar}
         <div ref="table" style={style} className={tableClass}>
-          <TableHeader rowSelectType={this.props.selectRow.mode}
+          <TableHeaders rowSelectType={this.props.selectRow.mode}
                        sortName={this.props.options.sortName}
                        sortOrder={this.props.options.sortOrder}
                        onSort={this.handleSort.bind(this)}
                        onSelectAllRow={this.handleSelectAllRow.bind(this)}>
             {this.props.children}
-          </TableHeader>
+          </TableHeaders>
           <TableBody ref="body" data={this.state.date} columns={columns}
                                 striped ={this.props.striped}
                                 hover={this.props.hover}
