@@ -27,5 +27,11 @@ function onAfterSaveCell(row,cellName,cellValue){
 React.render(
   <BootstrapTable data={products} striped={true} hover={true} pagination={true}
                   insertRow={true} deleteRow={true} search={true} columns={true}>
+                  <TableHeaderColumn dataField="id" dataAlign="center" dataSort={true} iskey={true}>Product ID</TableHeaderColumn>
+                  <TableHeaderColumn dataField="name" dataSort={true}> Product Name</TableHeaderColumn>
+                  <TableHeaderColumn dataField="price" dataFormat={priceFormatter} editable={false}>Product Price</TableHeaderColumn>
   </BootstrapTable>,document.getElementById("basic")
 );
+
+BootstrapTable.staticmethod();
+BootstrapTable.setSelectRow();

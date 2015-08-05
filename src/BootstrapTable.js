@@ -13,7 +13,7 @@ class BootstrapTable extends React.Component{
 
   constructor(props){
     super(props);
-
+    console.log(this.props.children);
     if(this.props.cellEdit){
       this.props.cellEdit.__onCompleteEdit__ = this.handleEditCell.bind(this);
       if(this.props.cellEdit.mode !== Const.CELL_EDIT_NODE)
